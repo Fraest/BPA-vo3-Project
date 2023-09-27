@@ -1,4 +1,4 @@
-private class Character
+class Character
 {
     //Variables
     private int ID;
@@ -13,7 +13,7 @@ private class Character
         this.ID = ID;
         this.HP = HP;
         this.DEF = DEF; 
-        this.Atk = ATK; 
+        this.ATK = ATK; 
         this.Speed = Speed; 
     }
 
@@ -57,7 +57,7 @@ private class Character
 
 
     //Attribute 4
-    public int Get ATK()
+    public int GetATK()
     {
         return ATK;
     }
@@ -74,7 +74,7 @@ private class Character
         return Speed;
     }
 
-    public void SetSpeed(string Speed)
+    public void SetSpeed(int Speed)
     {
         this.Speed = Speed;
     }
