@@ -21520,8 +21520,13 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp",
       "DisplayName": "Writing Assembly-CSharp.rsp",
       "ActionType": "WriteFile",
+<<<<<<< Updated upstream
       "PayloadOffset": 1620099,
       "PayloadLength": 33208,
+=======
+      "PayloadOffset": 1386448,
+      "PayloadLength": 30461,
+>>>>>>> Stashed changes
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
       "Outputs": [
@@ -21533,7 +21538,11 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp2",
       "DisplayName": "Writing Assembly-CSharp.rsp2",
       "ActionType": "WriteFile",
+<<<<<<< Updated upstream
       "PayloadOffset": 1653394,
+=======
+      "PayloadOffset": 1416996,
+>>>>>>> Stashed changes
       "PayloadLength": 0,
       "PayloadDebugContentSnippet": "",
       "Inputs": [],
@@ -21781,10 +21790,15 @@
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll",
         "Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll",
         "Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll",
+<<<<<<< Updated upstream
         "Assets/NavMeshComponents/Scripts/NavMeshLink.cs",
         "Assets/NavMeshComponents/Scripts/NavMeshModifier.cs",
         "Assets/NavMeshComponents/Scripts/NavMeshModifierVolume.cs",
         "Assets/NavMeshComponents/Scripts/NavMeshSurface.cs",
+=======
+        "Assets/Scripts/Camera.cs",
+        "Assets/Scripts/CameraController.cs",
+>>>>>>> Stashed changes
         "Assets/Scripts/Character.cs",
         "Assets/Scripts/LightUnit.cs",
         "Assets/Scripts/PlayerMovement.cs",
@@ -22048,8 +22062,13 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll.mvfrm.rsp",
       "DisplayName": "Writing Assembly-CSharp.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
+<<<<<<< Updated upstream
       "PayloadOffset": 1653490,
       "PayloadLength": 9729,
+=======
+      "PayloadOffset": 1417092,
+      "PayloadLength": 9366,
+>>>>>>> Stashed changes
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
       "Outputs": [

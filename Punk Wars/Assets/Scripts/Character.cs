@@ -18,8 +18,6 @@ class Character
     }
 
     //Getters and setters
-
-
     //Attribute 1
     public int GetID()
     {
