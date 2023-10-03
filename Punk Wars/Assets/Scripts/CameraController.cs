@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera : MonoBehavior
+public class CameraController : MonoBehavior
 {
     public float moveSpeed;
     public float moveTime;
