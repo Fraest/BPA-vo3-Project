@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public Transform cameraTransform;
+    //public Transform cameraTransform;
 
     public float normalSpeed, fastSpeed, moveSpeed, moveTime, zoomingSpeed;
 
@@ -15,7 +15,7 @@ public class CameraController : MonoBehaviour
     {
         //stops the transform from equaling zero
         newPos = transform.position;
-        newZoom = cameraTransform.localPosition;
+        //newZoom = cameraTransform.localPosition;
     }
 
     //Update is called once per frame
