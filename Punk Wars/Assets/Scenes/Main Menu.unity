@@ -596,6 +596,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1020798262}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: Button
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &764873303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -865,6 +877,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1020798262}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: Button
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &816189589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -931,7 +955,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ed292165680759741a485a065f828262, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1044,7 +1068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc93c30dd6b298b449e49f88321c911f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  src: {fileID: 0}
+  src: {fileID: 1020798260}
   sfx1: {fileID: 8300000, guid: ed292165680759741a485a065f828262, type: 3}
   sng1: {fileID: 0}
   sng2: {fileID: 0}
