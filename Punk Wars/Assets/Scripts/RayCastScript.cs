@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RayCastScript : MonoBehaviour
 {
     Camera cam;
-    public LayerMask navMask;
     [SerializeField] float rayLength;
     [SerializeField] Transform goal;
+    public RaycastHit mouseHit;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +27,15 @@ public class RayCastScript : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0)){
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
 
-            if(Physics.Raycast(ray, out hit, rayLength, navMask)){
-                goal.position = hit.point;
+            if(Physics.Raycast(ray, out mouseHit, rayLength)){
+                //if level is clicked on, set goal to the point clicked
+                if (mouseHit.collider.CompareTag("Level")){
+                    goal.position = mouseHit.point;
+                }
+                if (mouseHit.collider.CompareTag("Player")){
+                    mouseHit.collider.gameObject.GetComponent<PlayerMovement>().selected = true;
+                }
             }
         }
     }
