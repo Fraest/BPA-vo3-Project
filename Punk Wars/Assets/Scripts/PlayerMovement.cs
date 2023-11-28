@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] NavMeshAgent agent;
     private GameObject goal;
     public bool selected;
+    [SerializeField] Behaviour halo;
 
     private void Start() {
         selected = false;
@@ -20,11 +21,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(1)){
-            selected = false;
-        }
-        
-        //Comment stuff out for readability please 
+        if(selected) {halo.enabled = true;}
+        else {halo.enabled = false;}
         if (Input.GetMouseButtonDown(0))
         {
             if(selected){
