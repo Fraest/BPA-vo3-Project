@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Transform goal;
     private void Update()
     {
+        //Comment stuff out for readability please 
         if (Input.GetMouseButtonDown(0))
         {
             Invoke("movePlayer", 0.1f);
