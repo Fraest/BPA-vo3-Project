@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -7,12 +8,14 @@ public class RayCastScript : MonoBehaviour
 {
     Camera cam;
     [SerializeField] float rayLength;
-    [SerializeField] Transform goal;
-    public RaycastHit mouseHit;
+    public GameObject goal;
     // Start is called before the first frame update
     void Start()
     {
         cam = Camera.main;
+    }
+    void Awake() {
+        goal = GameObject.FindWithTag("Goal");
     }
 
     // Update is called once per frame
@@ -27,14 +30,18 @@ public class RayCastScript : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0)){
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
-            if(Physics.Raycast(ray, out mouseHit, rayLength)){
+            if(Physics.Raycast(ray, out hit, rayLength)){
+                //if a player character is clicked, select it
                 //if level is clicked on, set goal to the point clicked
-                if (mouseHit.collider.CompareTag("Level")){
-                    goal.position = mouseHit.point;
+                if (hit.collider.CompareTag("Player")){
+                    hit.collider.gameObject.GetComponent<PlayerMovement>().selected = true;
+                    Debug.Log("selected");
                 }
-                if (mouseHit.collider.CompareTag("Player")){
-                    mouseHit.collider.gameObject.GetComponent<PlayerMovement>().selected = true;
+                if (hit.collider.CompareTag("Level")){
+                    goal.transform.position = hit.point;
+                    Debug.Log("move");
                 }
             }
         }
