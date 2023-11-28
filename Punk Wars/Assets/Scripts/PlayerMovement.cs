@@ -37,3 +37,4 @@ public class PlayerMovement : MonoBehaviour
         agent.destination = goal.transform.position;
     }
 }
+
