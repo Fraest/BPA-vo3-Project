@@ -20,9 +20,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(1)){
-            selected = false;
-        }
+        // if(Input.GetMouseButtonDown(1)){
+        //     selected = false;
+        // }
         
         //Comment stuff out for readability please 
         if (Input.GetMouseButtonDown(0))
