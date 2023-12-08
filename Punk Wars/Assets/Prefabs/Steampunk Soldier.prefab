@@ -73,13 +73,13 @@ PrefabInstance:
       addedObject: {fileID: 7795557786437769716}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4c14a56097c723946ab94d32953eb867, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4723380867521490354}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4c14a56097c723946ab94d32953eb867, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 6877295016821374333}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4c14a56097c723946ab94d32953eb867, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2958442092556576551}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4c14a56097c723946ab94d32953eb867, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8002809289306169275}
   m_SourcePrefab: {fileID: 100100000, guid: 4c14a56097c723946ab94d32953eb867, type: 3}
 --- !u!1 &8400808523708888461 stripped
 GameObject:
@@ -108,21 +108,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &4723380867521490354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8400808523708888461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 223ee41b125893b489a12f2acffb4730, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 7795557786437769716}
-  selected: 0
-  halo: {fileID: 6877295016821374333}
 --- !u!122 &6877295016821374333
 Halo:
   m_ObjectHideFlags: 0
@@ -156,3 +141,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8, y: 8, z: 4}
   m_Center: {x: 0, y: 4, z: 0}
+--- !u!114 &8002809289306169275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8400808523708888461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 223ee41b125893b489a12f2acffb4730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 7795557786437769716}
+  selected: 0
+  halo: {fileID: 6877295016821374333}

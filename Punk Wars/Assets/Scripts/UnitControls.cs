@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class RayCastScript : MonoBehaviour
+public class UnitControls : MonoBehaviour
 {
     Camera cam;
     [SerializeField] float rayLength;
@@ -37,7 +37,7 @@ public class RayCastScript : MonoBehaviour
             if(Physics.Raycast(ray, out hit, rayLength)){
                 //if a unit is clicked, select it
                 if (hit.collider.CompareTag("Unit")){
-                    hit.collider.gameObject.GetComponent<PlayerMovement>().selected = true;
+                    hit.collider.gameObject.GetComponent<UnitBehavior>().selected = true;
                 }
                 else if (hit.collider.CompareTag("Level")){
                     //if level is clicked on, set goal to the point clicked
@@ -46,7 +46,7 @@ public class RayCastScript : MonoBehaviour
                     //moves all selected units
                     GameObject[] moveUnits = GameObject.FindGameObjectsWithTag("Unit");
                     foreach(GameObject unit in moveUnits){
-                        if(unit.GetComponent<PlayerMovement>().selected){
+                        if(unit.GetComponent<UnitBehavior>().selected){
                             unit.GetComponent<NavMeshAgent>().destination = goal.transform.position;
                         }
                     }
@@ -64,12 +64,12 @@ public class RayCastScript : MonoBehaviour
                 //if player right clicks on unit, unit is deselected
                 //if player right clicks on anything else, everything is deselected
                 if(hit.collider.CompareTag("Unit")){
-                    hit.collider.gameObject.GetComponent<PlayerMovement>().selected = false;
+                    hit.collider.gameObject.GetComponent<UnitBehavior>().selected = false;
                 }
                 else{
                     GameObject[] deselectUnits = GameObject.FindGameObjectsWithTag("Unit");
                     foreach(GameObject unit in deselectUnits){
-                        unit.gameObject.GetComponent<PlayerMovement>().selected = false;
+                        unit.gameObject.GetComponent<UnitBehavior>().selected = false;
                     }
                 }
             }

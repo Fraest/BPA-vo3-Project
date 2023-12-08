@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PlayerMovement : MonoBehaviour
+public class UnitBehavior : MonoBehaviour
 {
     [SerializeField] NavMeshAgent agent;
     public bool selected;
