@@ -38,6 +38,7 @@ public class UnitControls : MonoBehaviour
                 //if a unit is clicked, select it
                 if (hit.collider.CompareTag("Unit")){
                     hit.collider.gameObject.GetComponent<UnitBehavior>().selected = true;
+                    hit.collider.gameObject.GetComponent<UnitBehavior>().atGoal = false;
                 }
                 else if (hit.collider.CompareTag("Level")){
                     //if level is clicked on, set goal to the point clicked
@@ -48,6 +49,7 @@ public class UnitControls : MonoBehaviour
                     foreach(GameObject unit in moveUnits){
                         if(unit.GetComponent<UnitBehavior>().selected){
                             unit.GetComponent<NavMeshAgent>().destination = goal.transform.position;
+                            unit.GetComponent<UnitBehavior>().atGoal = false;
                         }
                     }
                 }
@@ -81,11 +83,13 @@ public class UnitControls : MonoBehaviour
             if (Physics.Raycast(ray, out hit, rayLength)){
                 if (hit.collider.CompareTag("Unit")){
                     hit.collider.GetComponent<NavMeshAgent>().destination = hit.collider.transform.position;
+                    hit.collider.GetComponent<UnitBehavior>().atGoal = true;
                 }
                 else{
                     GameObject[] stopUnits = GameObject.FindGameObjectsWithTag("Unit");
                     foreach(GameObject unit in stopUnits){
                         unit.gameObject.GetComponent<NavMeshAgent>().destination = unit.transform.position;
+                        unit.gameObject.GetComponent<UnitBehavior>().atGoal = true;
                     }
                 }
             }
