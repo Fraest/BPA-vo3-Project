@@ -6,7 +6,8 @@ public class CameraController : MonoBehaviour
 {
     //public Transform cameraTransform;
 
-    public float normalSpeed = 0.1F, fastSpeed = 0.5F, moveSpeed = 1, moveTime = 1, zoomingSpeed = 200;
+    [SerializeField] float normalSpeed, fastSpeed, moveSpeed, moveTime, zoomingSpeed;
+    
 
     public Vector3 newPos, zoomAmount, newZoom;
 
