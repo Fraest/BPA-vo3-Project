@@ -12,7 +12,11 @@ public class UnitBehavior : MonoBehaviour
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Behaviour halo;
     public bool selected, atGoal;
+    
 
+    private void Awake() {
+        
+    }
     private void Start() {
         selected = false;
     }
@@ -32,23 +36,23 @@ public class UnitBehavior : MonoBehaviour
     private void OnCollisionEnter(Collision other) {
         //stops unit if its going to the same place and is at the goal
         //yes this also looks bad, see previous comment
-        if(other.gameObject.GetComponent<UnitBehavior>().atGoal && other.gameObject.GetComponent<NavMeshAgent>().destination != agent.destination){
+        if(other.gameObject.GetComponent<UnitBehavior>().atGoal && other.gameObject.GetComponent<NavMeshAgent>().destination == agent.destination){
             agent.destination = transform.position;
             atGoal = true;
         }
 
         //if unit collides with a unit that isnt going to the same place it just goes through to avoid annoyances
-        if(other.gameObject.GetComponent<NavMeshAgent>().destination != agent.destination){
-            other.gameObject.GetComponent<BoxCollider>().enabled = false;
-            Invoke("wait", 2.0f);
-            other.gameObject.GetComponent<BoxCollider>().enabled = true;
+        if(other.gameObject.CompareTag("Unit") && other.gameObject.GetComponent<NavMeshAgent>().destination != agent.destination){
+            gameObject.GetComponent<BoxCollider>().enabled = false;
+            Invoke("enableCollider", 1.0f);
         }
     }
 
 
-    private void wait(){
-        //does nothing, used to just delay something using invoke
-        Debug.Log("waiting");
+    private void enableCollider(){
+        //used to just delay using invoke
+        // Debug.Log("waiting");
+        gameObject.GetComponent<BoxCollider>().enabled = true;
     }
 }
 

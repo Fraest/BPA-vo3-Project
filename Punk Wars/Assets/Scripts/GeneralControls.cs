@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -9,7 +10,7 @@ public class UnitControls : MonoBehaviour
 {
     Camera cam;
     [SerializeField] float rayLength;
-    private GameObject goal;
+    private GameObject goal, baseMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class UnitControls : MonoBehaviour
     }
     void Awake() {
         goal = GameObject.FindWithTag("Goal");
+        baseMenu = GameObject.FindWithTag("BaseMenu");
     }
 
     // Update is called once per frame
@@ -30,6 +32,7 @@ public class UnitControls : MonoBehaviour
         mousePos = cam.ScreenToWorldPoint(mousePos);
         Debug.DrawRay(transform.position, mousePos - transform.position, Color.blue);
 
+        #region unit controls
         if (Input.GetMouseButtonDown(0)){
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -48,10 +51,18 @@ public class UnitControls : MonoBehaviour
                     GameObject[] moveUnits = GameObject.FindGameObjectsWithTag("Unit");
                     foreach(GameObject unit in moveUnits){
                         if(unit.GetComponent<UnitBehavior>().selected){
+                            unit.GetComponent<Rigidbody>().constraints &= ~RigidbodyConstraints.FreezeAll;
                             unit.GetComponent<NavMeshAgent>().destination = goal.transform.position;
                             unit.GetComponent<UnitBehavior>().atGoal = false;
                         }
                     }
+                }
+                else if(hit.collider.CompareTag("Base")){
+                    GameObject[] deselectUnits = GameObject.FindGameObjectsWithTag("Unit");
+                    foreach(GameObject unit in deselectUnits){
+                        unit.gameObject.GetComponent<UnitBehavior>().selected = false;
+                    }
+                    
                 }
 
                 
@@ -64,7 +75,7 @@ public class UnitControls : MonoBehaviour
             
             if(Physics.Raycast(ray, out hit, rayLength)){
                 //if player right clicks on unit, unit is deselected
-                //if player right clicks on anything else, everything is deselected
+                //if player right clicks on anything else, all units are deselected
                 if(hit.collider.CompareTag("Unit")){
                     hit.collider.gameObject.GetComponent<UnitBehavior>().selected = false;
                 }
@@ -82,17 +93,22 @@ public class UnitControls : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, rayLength)){
                 if (hit.collider.CompareTag("Unit")){
+                    //if player middle clicks on unit, unit stops
                     hit.collider.GetComponent<NavMeshAgent>().destination = hit.collider.transform.position;
+                    hit.collider.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
                     hit.collider.GetComponent<UnitBehavior>().atGoal = true;
                 }
                 else{
                     GameObject[] stopUnits = GameObject.FindGameObjectsWithTag("Unit");
                     foreach(GameObject unit in stopUnits){
+                        //if player middle clicks on anything else, all units stop
                         unit.gameObject.GetComponent<NavMeshAgent>().destination = unit.transform.position;
+                        unit.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
                         unit.gameObject.GetComponent<UnitBehavior>().atGoal = true;
                     }
                 }
             }
         }
+        #endregion
     }
 }
