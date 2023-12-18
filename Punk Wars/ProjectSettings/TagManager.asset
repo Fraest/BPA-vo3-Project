@@ -7,6 +7,8 @@ TagManager:
   - Goal
   - Level
   - Unit
+  - Base
+  - BaseMenu
   layers:
   - Default
   - TransparentFX
