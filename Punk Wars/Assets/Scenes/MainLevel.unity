@@ -755,17 +755,74 @@ MonoBehaviour:
   m_GameObject: {fileID: 1332020130}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c06f8ad6d71bdf4899cde7c512e383b, type: 3}
+  m_Script: {fileID: 11500000, guid: 0be80264fe0072e4da237629d5a6c016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalSpeed: 0.1
-  fastSpeed: 0.5
+  normalSpeed: 0.75
+  fastSpeed: 3
   moveSpeed: 0
   moveTime: 1
   zoomingSpeed: 100
   newPos: {x: 0, y: 0, z: 0}
   zoomAmount: {x: 0, y: 0, z: 0}
   newZoom: {x: 0, y: 0, z: 0}
+--- !u!1001 &1333978388
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 83707909605396907, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_Name
+      value: Brass
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.1302052
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -17.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
 --- !u!1 &1583529411
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,6 +897,10 @@ PrefabInstance:
     - target: {fileID: 8400808523708888461, guid: c67be3b3e2b44f04dafa615cd1d77648, type: 3}
       propertyPath: m_Name
       value: Steampunk Soldier
+      objectReference: {fileID: 0}
+    - target: {fileID: 8400808523708888461, guid: c67be3b3e2b44f04dafa615cd1d77648, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9213936557739585335, guid: c67be3b3e2b44f04dafa615cd1d77648, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1439,3 +1500,4 @@ SceneRoots:
   - {fileID: 1800150491}
   - {fileID: 93120115}
   - {fileID: 1188793585}
+  - {fileID: 1333978388}
