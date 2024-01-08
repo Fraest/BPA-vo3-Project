@@ -46,9 +46,8 @@ public class UnitBehavior : MonoBehaviour
     }
 
 
-    private void wait(){
+    public void wait(){
         //does nothing, used to just delay something using invoke
-        Debug.Log("waiting");
     }
 }
 

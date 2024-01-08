@@ -40,7 +40,7 @@ public class UnitControls : MonoBehaviour
                     hit.collider.gameObject.GetComponent<UnitBehavior>().selected = true;
                     hit.collider.gameObject.GetComponent<UnitBehavior>().atGoal = false;
                 }
-                else if (hit.collider.CompareTag("Level")){
+                else if (hit.collider.CompareTag("Level") || hit.collider.CompareTag("Ore")){
                     //if level is clicked on, set goal to the point clicked
                     goal.transform.position = hit.point;
 
@@ -53,11 +53,11 @@ public class UnitControls : MonoBehaviour
                         }
                     }
                 }
-                else if(hit.collider.CompareTag("Ore")){
-                    //if ore is clicked, damage ore
-                    //will be fleshed out later
-                    hit.collider.gameObject.GetComponent<HealthManager>().loseHealth(1);
-                }
+                // else if(hit.collider.CompareTag("Ore")){
+                //     //if ore is clicked, damage ore
+                //     //will be fleshed out later
+                //     hit.collider.gameObject.GetComponent<HealthManager>().loseHealth(1);
+                // }
                 
             }
         }
