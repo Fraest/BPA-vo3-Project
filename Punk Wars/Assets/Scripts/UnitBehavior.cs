@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
@@ -11,14 +12,15 @@ public class UnitBehavior : MonoBehaviour
 {
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Behaviour halo;
-    public bool selected, atGoal;
-    private bool inHitRange = false;
+    [SerializeField] ParticleSystem oreParicles;
+    public bool selected, atGoal, inHitRange = false;
     GameObject enemy;
-    float timer = 0;
+    float timer = 0, timer2 = 0;
 
 
     private void Start() {
         selected = false;
+        oreParicles.Emit(1000);
     }
 
 
@@ -36,9 +38,21 @@ public class UnitBehavior : MonoBehaviour
 
         //if in range to damage something, do so once per second
         timer += Time.deltaTime;
+        // timer2 += Time.deltaTime;
+        // Debug.Log(timer2);
+        // if(timer2 >= .2){
+        //     timer2 = .2f;
+        // }
         if(timer >= 1){
             if(inHitRange){
                 damage();
+                //creates burst of particles on hit for .2 seconds
+                // oreParicles.emissionRate = 100;
+                // if(timer2 >= .2){
+                //     oreParicles.emissionRate = 0;
+                //     timer2 = 0;
+                // }
+                oreParicles.Emit(100);
             }
             timer = 0;
         }
@@ -83,8 +97,11 @@ public class UnitBehavior : MonoBehaviour
 
 
     public void damage(){
-        enemy.GetComponent<HealthManager>().loseHealth(1);
-        Debug.Log(enemy.GetComponent<HealthManager>().health);
+        //throws a ton of errors once the ore gets destroyed
+        //this just prevents error clutter
+        try{
+            enemy.GetComponent<HealthManager>().loseHealth(1);
+        }catch(Exception e){}
     }
 
 

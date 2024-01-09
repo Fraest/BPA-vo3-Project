@@ -56,12 +56,6 @@ public class UnitControls : MonoBehaviour
                         }
                     }
                 }
-                // else if(hit.collider.CompareTag("Ore")){
-                //     //if ore is clicked, damage ore
-                //     //will be fleshed out later
-                //     hit.collider.gameObject.GetComponent<HealthManager>().loseHealth(1);
-                // }
-                
             }
         }
 

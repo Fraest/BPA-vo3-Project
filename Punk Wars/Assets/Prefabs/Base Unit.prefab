@@ -125,8 +125,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 4769295836064269624}
   halo: {fileID: -9185767298946280702}
+  oreParicles: {fileID: 2708431292555432263, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
   selected: 0
   atGoal: 0
+  inHitRange: 0
 --- !u!122 &-9185767298946280702
 Halo:
   m_ObjectHideFlags: 0
