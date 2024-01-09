@@ -12,10 +12,16 @@ public class UnitBehavior : MonoBehaviour
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Behaviour halo;
     public bool selected, atGoal;
+    private bool inHitRange = false;
+    GameObject enemy;
+    float timer = 0;
+
 
     private void Start() {
         selected = false;
     }
+
+
     private void Update()
     {
         //signals if unit is selected
@@ -27,7 +33,17 @@ public class UnitBehavior : MonoBehaviour
         if ((transform.position.x-1 <= agent.destination.x) && (agent.destination.x <= transform.position.x +1) && (transform.position.y-1 <= agent.destination.y) && (agent.destination.y <= transform.position.y +1)){
             atGoal = true;
         }
+
+        //if in range to damage something, do so once per second
+        timer += Time.deltaTime;
+        if(timer >= 1){
+            if(inHitRange){
+                damage();
+            }
+            timer = 0;
+        }
     }
+
 
     private void OnCollisionEnter(Collision other) {
         //stops unit if its going to the same place and is at the goal
@@ -43,6 +59,32 @@ public class UnitBehavior : MonoBehaviour
             Invoke("wait", 2.0f);
             other.gameObject.GetComponent<BoxCollider>().enabled = true;
         }
+    }
+
+
+    void OnTriggerEnter(Collider other) {
+        //if unit is in the collider of an ore/enemy, set a bool to true
+        //if said bool is true, unit attacks the object it's colliding with repeatedly in the update function
+        //ore colliders are much bigger than the model suggests for this to work
+        if(other.gameObject.CompareTag("Ore")){
+            enemy = other.gameObject;
+            inHitRange = true;
+        }
+    }
+
+
+    void OnTriggerExit(Collider other) {
+        //sets unit to not attacking the object it was attacking
+        if(other.gameObject.CompareTag("Ore")){
+            enemy = null;
+            inHitRange = false;
+        }
+    }
+
+
+    public void damage(){
+        enemy.GetComponent<HealthManager>().loseHealth(1);
+        Debug.Log(enemy.GetComponent<HealthManager>().health);
     }
 
 

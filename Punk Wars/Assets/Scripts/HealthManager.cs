@@ -12,6 +12,7 @@ public class HealthManager : MonoBehaviour
         
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -19,9 +20,11 @@ public class HealthManager : MonoBehaviour
         if(health<0) {health = 0;}
     }
 
+
     public void loseHealth(int damage){
         health -= damage;
     }
+    
 
     public void gainHealth(int healing){
         health += healing;

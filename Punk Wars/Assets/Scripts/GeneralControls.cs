@@ -16,9 +16,12 @@ public class UnitControls : MonoBehaviour
     {
         cam = Camera.main;
     }
+
+
     void Awake() {
         goal = GameObject.FindWithTag("Goal");
     }
+    
 
     // Update is called once per frame
     void Update()
