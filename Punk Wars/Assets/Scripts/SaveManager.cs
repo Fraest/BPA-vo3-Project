@@ -39,4 +39,47 @@
 //                 // set up an object command to control db
 //                 IDbCommand Command = Connection.CreateCommand();
 //             }
+<<<<<<< Updated upstream
+=======
+//         }
+//     }
+
+//     public string Read(string table, string column, int row)
+//     {
+//         using (SqliteConnection connection = new SqliteConnection(dbName))
+//         {
+//             connection.Open();
+//             SqliteCommand cmd = new SqliteCommand("SELECT " + column + " FROM " + table + " WHERE id = " + row.toString(), connection);
+//             SqliteDataReader reader = cmd.ExecuteReader();
+
+//             return reader.GetValue(0).ToString();
+//         }
+//     }
+
+//     public void Write(string table, string column, int row, string variableToUse)
+//     {
+//         using (var connection = new SqliteConnection(dbName))
+//         {
+//             connection.Open();
+
+//             //Setting up an object command to allow db caontrol
+//             using (var command = connection.CreateCommand())
+//             {
+//                 // command.CommandText = "SELECT DISTINCT " + column + " FROM " + table + " WHERE id = " + row.ToString() + " ORDER BY id;";
+//                 // command.ExecuteNonQuery();
+
+//                 // //IDataReader dataReader = command.ExecuteReader();
+//                 // command.CommandText = "UPDATE " + table + " SET " + column + " = " + variableToUse + " WHERE id = " + row.ToString();
+//                 // command.ExecuteNonQuery();
+//             }
+//             connection.Close();
+//         }
+//     }
+
+//     public void DeleteAndRecreateDatabase()
+//     {
+//         File.Delete("Database.db");
+//         CreateDB();
+//     }
+>>>>>>> Stashed changes
 // }
