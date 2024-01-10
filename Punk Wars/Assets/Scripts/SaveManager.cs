@@ -39,8 +39,6 @@
 //                 // set up an object command to control db
 //                 IDbCommand Command = Connection.CreateCommand();
 //             }
-<<<<<<< Updated upstream
-=======
 //         }
 //     }
 
@@ -81,5 +79,4 @@
 //         File.Delete("Database.db");
 //         CreateDB();
 //     }
->>>>>>> Stashed changes
 // }

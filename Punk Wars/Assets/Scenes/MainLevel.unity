@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 149051190}
   - component: {fileID: 149051189}
   - component: {fileID: 149051188}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Level
   m_Icon: {fileID: 0}
@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 154126916}
   - component: {fileID: 154126915}
   - component: {fileID: 154126914}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall1
   m_TagString: Level
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 220189817}
   - component: {fileID: 220189818}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Walls
   m_TagString: Level
   m_Icon: {fileID: 0}
@@ -528,6 +528,63 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!1001 &250734282
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 83707909605396907, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_Name
+      value: Copper (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.4477825
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.1302032
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.769886
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
 --- !u!1001 &330325992
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -693,7 +750,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 954464390}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Level
   m_TagString: Level
   m_Icon: {fileID: 0}
@@ -785,7 +842,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1122562564}
   - component: {fileID: 1122562565}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Walls (1)
   m_TagString: Level
   m_Icon: {fileID: 0}
@@ -1094,6 +1151,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+--- !u!1001 &1235713178
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 83707909605396907, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_Name
+      value: Copper (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -38.570877
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.1302032
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.5746002
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 748357622303542033, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
 --- !u!1 &1332020130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,7 +1328,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1583529412}
   - component: {fileID: 1583529413}
-  - component: {fileID: 1583529414}
   m_Layer: 0
   m_Name: NavMesh
   m_TagString: Untagged
@@ -1255,7 +1368,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 183
+    m_Bits: 439
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -1268,19 +1381,6 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 9d852ed2a772bd2498be11a7a73fb4f3, type: 2}
   m_BuildHeightMesh: 0
---- !u!114 &1583529414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1583529411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb12ae536d3ebcc49ad8892eb9b8ddfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  navData: {fileID: 23800000, guid: 9d852ed2a772bd2498be11a7a73fb4f3, type: 2}
 --- !u!1001 &1691839321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1350,7 +1450,7 @@ GameObject:
   - component: {fileID: 1701321999}
   - component: {fileID: 1701321998}
   - component: {fileID: 1701321997}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall2
   m_TagString: Level
   m_Icon: {fileID: 0}
@@ -1455,7 +1555,7 @@ GameObject:
   - component: {fileID: 1834899357}
   - component: {fileID: 1834899356}
   - component: {fileID: 1834899355}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall2
   m_TagString: Level
   m_Icon: {fileID: 0}
@@ -1560,7 +1660,7 @@ GameObject:
   - component: {fileID: 2056613028}
   - component: {fileID: 2056613027}
   - component: {fileID: 2056613026}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall1
   m_TagString: Level
   m_Icon: {fileID: 0}
@@ -1776,3 +1876,5 @@ SceneRoots:
   - {fileID: 1189508939}
   - {fileID: 330325992}
   - {fileID: 1212469236}
+  - {fileID: 1235713178}
+  - {fileID: 250734282}
