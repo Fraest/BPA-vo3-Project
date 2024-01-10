@@ -36,16 +36,8 @@ public class SaveManager : MonoBehaviour
             {
                 Connection.Open();
 
-<<<<<<< Updated upstream
-//                 // set up an object command to control db
-//                 IDbCommand Command = Connection.CreateCommand();
-//             }
-//         }
-//     }
-=======
                 // set up an object command to control db
                 IDbCommand Command = Connection.CreateCommand();
->>>>>>> Stashed changes
 
                 // Creating the Unit Table if it doesn't already exist
                 Command.CommandText = "CREATE TABLE IF NOT EXISTS Main (id INTEGER, UnitHP INTEGER, UnitXPosition INTEGER, UnitYPosition INTEGER, UnitZPosition INTEGER, OnYourTeam INTEGER);";
@@ -71,14 +63,6 @@ public class SaveManager : MonoBehaviour
             SqliteCommand cmd = new SqliteCommand("SELECT " + column + " FROM " + table + " WHERE id = " + row.toString(), connection);
             SqliteDataReader reader = cmd.ExecuteReader();
 
-<<<<<<< Updated upstream
-//     public void DeleteAndRecreateDatabase()
-//     {
-//         File.Delete("Database.db");
-//         CreateDB();
-//     }
-// }
-=======
             return reader.GetValue(0).ToString();
         }
     }
@@ -109,4 +93,3 @@ public class SaveManager : MonoBehaviour
         CreateDB();
     }
 }
->>>>>>> Stashed changes
