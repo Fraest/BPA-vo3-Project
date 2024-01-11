@@ -125,7 +125,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 4769295836064269624}
   halo: {fileID: -9185767298946280702}
-  oreParicles: {fileID: 2708431292555432263, guid: 91e1c5bec730cce43a5def48f229bf16, type: 3}
   selected: 0
   atGoal: 0
   inHitRange: 0
@@ -140,7 +139,7 @@ Halo:
   m_Color:
     serializedVersion: 2
     rgba: 4294907136
-  m_Size: 2.5
+  m_Size: 10
 --- !u!65 &2597647905778148747
 BoxCollider:
   m_ObjectHideFlags: 0

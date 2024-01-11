@@ -59,17 +59,21 @@ public class UnitBehavior : MonoBehaviour
     private void OnCollisionEnter(Collision other) {
         //stops unit if its going to the same place and is at the goal
         //yes this also looks bad, see previous comment
-        if(other.gameObject.GetComponent<UnitBehavior>().atGoal && other.gameObject.GetComponent<NavMeshAgent>().destination != agent.destination){
-            agent.destination = transform.position;
-            atGoal = true;
-        }
+        try{
+            if(other.gameObject.GetComponent<UnitBehavior>().atGoal && other.gameObject.GetComponent<NavMeshAgent>().destination != agent.destination){
+                agent.destination = transform.position;
+                atGoal = true;
+            }
+        }catch(Exception e){}
 
         //if unit collides with a unit that isnt going to the same place it just goes through to avoid annoyances
-        if(other.gameObject.GetComponent<NavMeshAgent>().destination != agent.destination){
-            other.gameObject.GetComponent<BoxCollider>().enabled = false;
-            Invoke("wait", 2.0f);
-            other.gameObject.GetComponent<BoxCollider>().enabled = true;
-        }
+        try{
+            if(other.gameObject.GetComponent<NavMeshAgent>().destination != agent.destination){
+                other.gameObject.GetComponent<BoxCollider>().enabled = false;
+                Invoke("wait", 2.0f);
+                other.gameObject.GetComponent<BoxCollider>().enabled = true;
+            }
+        }catch(Exception e){}
     }
 
 
