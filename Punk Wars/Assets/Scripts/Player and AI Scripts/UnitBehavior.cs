@@ -12,7 +12,6 @@ public class UnitBehavior : MonoBehaviour
 {
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Behaviour halo;
-    [SerializeField] ParticleSystem oreParicles;
     public bool selected, atGoal, inHitRange = false;
     GameObject enemy;
     float timer = 0, timer2 = 0;
@@ -20,7 +19,6 @@ public class UnitBehavior : MonoBehaviour
 
     private void Start() {
         selected = false;
-        oreParicles.Emit(1000);
     }
 
 
@@ -52,7 +50,6 @@ public class UnitBehavior : MonoBehaviour
                 //     oreParicles.emissionRate = 0;
                 //     timer2 = 0;
                 // }
-                oreParicles.Emit(100);
             }
             timer = 0;
         }

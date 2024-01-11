@@ -9,7 +9,7 @@ public class UnitControls : MonoBehaviour
 {
     Camera cam;
     [SerializeField] float rayLength;
-    private GameObject goal;
+    GameObject goal;
 
     // Start is called before the first frame update
     void Start()
