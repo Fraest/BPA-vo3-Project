@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class OreBehavior : MonoBehaviour
 {
+    [SerializeField] GameObject brokenOre, oreModel;
     public int currentHealth;
 
     void Awake() {
@@ -30,6 +32,9 @@ public class OreBehavior : MonoBehaviour
     public void destroyed(int ores){
         //gives a random amount of ores
         ores += Random.Range(1,3);
-        Destroy(gameObject);
+        //instantiates broken ore with regular ore as the parent
+        Instantiate(brokenOre, gameObject.transform);
+        //deactivates the regular ore
+        oreModel.SetActive(false);
     }
 }
