@@ -29,7 +29,10 @@ public class SaveManager : MonoBehaviour
      // Update is called once per frame
     void Update()
     {
-        public void CreateDB()
+        // literally does nothing at the moment.
+    }
+
+    public void CreateDB()
         {
             // Create DB connection
             using (var Connection = new SqliteConnection(dbName))
@@ -40,18 +43,13 @@ public class SaveManager : MonoBehaviour
                 IDbCommand Command = Connection.CreateCommand();
 
                 // Creating the Unit Table if it doesn't already exist
-                Command.CommandText = "CREATE TABLE IF NOT EXISTS Main (id INTEGER, UnitHP INTEGER, UnitXPosition INTEGER, UnitYPosition INTEGER, UnitZPosition INTEGER, OnYourTeam INTEGER);";
+                Command.CommandText = "CREATE TABLE IF NOT EXISTS Scores (id INTEGER, Score INTEGER);";
                 Command.ExecuteReader();
                 Command = Connection.CreateCommand();
 
-                //Creating the Player Table if it doesn't already exist
-                Command.CommandText = "CREATE TABLE IF NOT EXISTS Player (id INTEGER, Copper INTEGER, Iron INTEGER, BaseHP);";
-                Command = Connection.CreateCommand();
-
-                 Connection.Close();
+                Connection.Close();
             }
         }
-    }
 
     public string Read(string table, string column, int row)
     {
