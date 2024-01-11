@@ -1280,7 +1280,7 @@ GameObject:
   - component: {fileID: 1645718096}
   - component: {fileID: 1645718095}
   m_Layer: 0
-  m_Name: 'Title '
+  m_Name: Words
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1328,7 +1328,8 @@ MonoBehaviour:
   m_text: "WASD TO MOVE CAMERA\r\nSCROLL WHEEL TO ZOOM IN AND OUT\r\nLEFT CLICK ON
     TROOPS TO SELECT\r\nLEFT CLICK LOCATION OR OBJECT TO SEND TROOPS THERE OR ATTACK\r\nRIGHT
     CLICK TO DESELECT EVERYTHING\r\nMIDDLE CLICK TO STOP ALL MOVEMENT \r\nCOLLECT
-    RESOURCES TO SUMMON TROOPS FROM BASE & ATTACK YOUR OPPONENT \r\n"
+    RESOURCES TO SUMMON TROOPS FROM BASE & ATTACK YOUR OPPONENT \r\nESC PAUSES THE
+    GAME"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
