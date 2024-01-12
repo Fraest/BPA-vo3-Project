@@ -26,15 +26,16 @@ public class OreBehavior : MonoBehaviour
     {
         //continuously updates the current health
         currentHealth = gameObject.GetComponent<HealthManager>().health;
-        if(currentHealth <= 0) {destroyed(0);}
+        if(currentHealth <= 0) {destroyed(0,0);}
         //prevents health from going down if the ore is destroyed
         if(!regularOre.activeSelf){gameObject.GetComponent<HealthManager>().health = gameObject.GetComponent<HealthManager>().maxHealth;}
     }
 
 
-    public void destroyed(int ores){
-        //gives a random amount of ores
-        ores += Random.Range(1,3);
+    public void destroyed(int copper, int iron){
+        //gives a random amount of an ore
+        // if(regularOre.gameObject.GetComponent<OreDecision>().isCopper){copper += Random.Range(1,4);}
+        // else{iron += Random.Range(1,4);}
         //deactivates the regular ore and activates the broken ore
         brokenOre.SetActive(true);
         //resets health for when it regens
