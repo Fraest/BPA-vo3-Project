@@ -9,6 +9,7 @@ public class OreBehavior : MonoBehaviour
     [SerializeField] GameObject regularOre, brokenOre;
     public int currentHealth;
 
+
     void Awake() {
         currentHealth = gameObject.GetComponent<HealthManager>().health;
     }
@@ -26,19 +27,26 @@ public class OreBehavior : MonoBehaviour
     {
         //continuously updates the current health
         currentHealth = gameObject.GetComponent<HealthManager>().health;
-        if(currentHealth <= 0) {destroyed(0,0);}
+        if(currentHealth <= 0) {
+            //!!!update later with copper and iron counters instead of 0
+            if(regularOre.gameObject.GetComponent<OreDecision>().isCopper){
+                destroyed(0);
+            }
+            else{
+                destroyed(0);
+            }
+        }
         //prevents health from going down if the ore is destroyed
         if(!regularOre.activeSelf){gameObject.GetComponent<HealthManager>().health = gameObject.GetComponent<HealthManager>().maxHealth;}
     }
 
 
-    public void destroyed(int copper, int iron){
-        //gives a random amount of an ore
-        // if(regularOre.gameObject.GetComponent<OreDecision>().isCopper){copper += Random.Range(1,4);}
-        // else{iron += Random.Range(1,4);}
+    public int destroyed(int ore){
         //deactivates the regular ore and activates the broken ore
         brokenOre.SetActive(true);
         //resets health for when it regens
         regularOre.SetActive(false);
+        //adds 1 to 3 to an ore counter
+        return (ore += Random.Range(1,4));
     }
 }

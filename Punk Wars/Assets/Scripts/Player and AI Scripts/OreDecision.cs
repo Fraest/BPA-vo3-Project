@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OreDescicion : MonoBehaviour
+public class OreDecision : MonoBehaviour
 {
     public bool isCopper;
     void Awake() {
