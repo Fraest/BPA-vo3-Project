@@ -36,20 +36,9 @@ public class UnitBehavior : MonoBehaviour
 
         //if in range to damage something, do so once per second
         timer += Time.deltaTime;
-        // timer2 += Time.deltaTime;
-        // Debug.Log(timer2);
-        // if(timer2 >= .2){
-        //     timer2 = .2f;
-        // }
         if(timer >= 1){
             if(inHitRange){
                 damage();
-                //creates burst of particles on hit for .2 seconds
-                // oreParicles.emissionRate = 100;
-                // if(timer2 >= .2){
-                //     oreParicles.emissionRate = 0;
-                //     timer2 = 0;
-                // }
             }
             timer = 0;
         }

@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class OreBehavior : MonoBehaviour
 {
-    [SerializeField] GameObject brokenOre, oreModel;
+    [SerializeField] GameObject regularOre, brokenOre;
     public int currentHealth;
+
 
     void Awake() {
         currentHealth = gameObject.GetComponent<HealthManager>().health;
@@ -24,17 +25,28 @@ public class OreBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //continuously updates the current health
         currentHealth = gameObject.GetComponent<HealthManager>().health;
-        if(currentHealth <= 0) {destroyed(0);}
+        if(currentHealth <= 0) {
+            //!!!update later with copper and iron counters instead of 0
+            if(regularOre.gameObject.GetComponent<OreDecision>().isCopper){
+                destroyed(0);
+            }
+            else{
+                destroyed(0);
+            }
+        }
+        //prevents health from going down if the ore is destroyed
+        if(!regularOre.activeSelf){gameObject.GetComponent<HealthManager>().health = gameObject.GetComponent<HealthManager>().maxHealth;}
     }
 
 
-    public void destroyed(int ores){
-        //gives a random amount of ores
-        ores += Random.Range(1,3);
-        //instantiates broken ore with regular ore as the parent
-        Instantiate(brokenOre, gameObject.transform);
-        //deactivates the regular ore
-        oreModel.SetActive(false);
+    public int destroyed(int ore){
+        //deactivates the regular ore and activates the broken ore
+        brokenOre.SetActive(true);
+        //resets health for when it regens
+        regularOre.SetActive(false);
+        //adds 1 to 3 to an ore counter
+        return (ore += Random.Range(1,4));
     }
 }
