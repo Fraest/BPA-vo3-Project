@@ -8,15 +8,21 @@ using System.Data;
 
 public class Gameloop : Monobehavior
 {
+    int points = 0;
     void Update()
     {
         if(blah > 0)  // blah to be replaced by the health value of the HQ
         {
-
+            
         }
         else
         {
             
         }
+    }
+
+    public void IncrementPoints()
+    {
+        points = points + 10;
     }
 }

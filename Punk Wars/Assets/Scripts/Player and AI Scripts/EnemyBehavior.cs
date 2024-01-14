@@ -20,6 +20,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         if(hm.health == 0){
             Destroy(gameObject);
+            IncrementPoints();
         }
     }
 }
