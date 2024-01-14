@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Menu1 : MonoBehaviour
 {
+    private SaveManager savemanager;
+
     //Increases build index by 1 to go to the next scene in the index
     public void Play()
     {
@@ -27,6 +29,7 @@ public class Menu1 : MonoBehaviour
     //Closes App
     public void Quit()
     {
+        savemanager.DeleteAndRecreateDatabase();
         Application.Quit();
         Debug.Log("QUIT");
     }
