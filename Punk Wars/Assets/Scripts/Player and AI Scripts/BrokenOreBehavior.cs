@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BrokenOreBehavior : MonoBehaviour
 {
-    [SerializeField] GameObject regularOre;
+    [SerializeField] GameObject regularOre, healthbarObject;
     float timer;
 
 
@@ -20,8 +20,11 @@ public class BrokenOreBehavior : MonoBehaviour
     {
         //after two minutes, regens the ore
         timer += Time.deltaTime;
-        if(timer >= 120){
+        if(timer >= 3){
             timer = 0;
+            regularOre.SetActive(true);
+            healthbarObject.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
 }

@@ -10,13 +10,14 @@ using UnityEngine.UIElements;
 
 public class UnitBehavior : MonoBehaviour
 {
+    public bool selected, atGoal, inHitRange = false, inDanger = false;
+    [SerializeField] private Healthbar healthbar;
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Behaviour halo;
-    public bool selected, atGoal, inHitRange = false, inDanger = false;
-    GameObject enemy;
     float timer = 0, timer2 = 0;
     private HealthManager hm;
-    [SerializeField] private Healthbar healthbar;
+    GameObject enemy;
+    
 
 
     private void Start() {
@@ -100,7 +101,7 @@ public class UnitBehavior : MonoBehaviour
 
     void OnTriggerExit(Collider other) {
         //sets unit to not attacking the object it was previously attacking
-        if(other.gameObject.CompareTag("Ore")){
+        if(other.gameObject.CompareTag("Ore") || other.gameObject.CompareTag("Enemy")){
             enemy = null;
             inHitRange = false;
             inDanger = false;
@@ -113,7 +114,6 @@ public class UnitBehavior : MonoBehaviour
         //the try catch just prevents error clutter
         try{
             enemy.GetComponent<HealthManager>().loseHealth(1);
-            enemy.GetComponent<Healthbar>().UpdateHealthbar(enemy.GetComponent<HealthManager>().maxHealth, enemy.GetComponent<HealthManager>().health);
             //does this since OnTriggerExit doesnt work when triggers are deleted
             if(enemy.GetComponent<HealthManager>().health == 0){
                 enemy = null;

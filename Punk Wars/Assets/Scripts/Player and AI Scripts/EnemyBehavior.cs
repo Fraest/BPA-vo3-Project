@@ -29,5 +29,6 @@ public class EnemyBehavior : MonoBehaviour
             Destroy(gameObject);
             gameloop.IncrementPoints();
         }
+        healthbar.UpdateHealthbar(hm.maxHealth, hm.health);
     }
 }

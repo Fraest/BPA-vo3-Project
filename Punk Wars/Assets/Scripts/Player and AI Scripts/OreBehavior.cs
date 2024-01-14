@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class OreBehavior : MonoBehaviour
 {
-    [SerializeField] GameObject regularOre, brokenOre;
+    [SerializeField] GameObject regularOre, brokenOre, healthbarObject;
+    [SerializeField] private Healthbar healthbar;
     HealthManager hm;
 
 
@@ -36,6 +37,7 @@ public class OreBehavior : MonoBehaviour
         }
         //prevents health from going down if the ore is destroyed
         if(!regularOre.activeSelf){hm.health = hm.maxHealth;}
+        else{healthbar.UpdateHealthbar(hm.maxHealth, hm.health);}
     }
 
 
@@ -44,6 +46,7 @@ public class OreBehavior : MonoBehaviour
         brokenOre.SetActive(true);
         //resets health for when it regens
         regularOre.SetActive(false);
+        healthbarObject.SetActive(false);
         //adds 1 to 3 to an ore counter
         return (ore += Random.Range(1,4));
     }
