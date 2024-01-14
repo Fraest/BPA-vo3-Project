@@ -12,6 +12,5 @@ public class OreDecision : MonoBehaviour
             
         }
         else{isCopper = true;}
-        Debug.Log(isCopper);
     }
 }

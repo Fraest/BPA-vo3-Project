@@ -12,12 +12,14 @@ public class UnitBehavior : MonoBehaviour
 {
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Behaviour halo;
-    public bool selected, atGoal, inHitRange = false;
+    public bool selected, atGoal, inHitRange = false, inDanger = false;
     GameObject enemy;
     float timer = 0, timer2 = 0;
+    HealthManager hm;
 
 
     private void Start() {
+        hm = gameObject.GetComponent<HealthManager>();
         selected = false;
     }
 
@@ -38,10 +40,21 @@ public class UnitBehavior : MonoBehaviour
         timer += Time.deltaTime;
         if(timer >= 1){
             if(inHitRange){
-                damage();
+                attack();
+                if(inDanger){
+                    hm.loseHealth(1);
+                }
             }
             timer = 0;
         }
+
+        //heal every 20 seconds
+        timer2 += Time.deltaTime;
+        if(timer2 >= 20){
+            hm.gainHealth(1);
+        }
+
+        if(hm.health == 0){Destroy(gameObject);}
     }
 
 
@@ -69,24 +82,28 @@ public class UnitBehavior : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         //if unit is in the collider of an ore/enemy, set a bool to true
         //if said bool is true, unit attacks the object it's colliding with repeatedly in the update function
-        //ore colliders are much bigger than the model suggests for this to work
-        if(other.gameObject.CompareTag("Ore")){
+        //ores and enemies have two colliders, one for actual collisions, and a bigger one for triggers
+        if(other.gameObject.CompareTag("Ore") || other.gameObject.CompareTag("Enemy")){
             enemy = other.gameObject;
             inHitRange = true;
+            if(other.gameObject.CompareTag("Enemy")){
+                inDanger = true;
+            }
         }
     }
 
 
     void OnTriggerExit(Collider other) {
-        //sets unit to not attacking the object it was attacking
+        //sets unit to not attacking the object it was previously attacking
         if(other.gameObject.CompareTag("Ore")){
             enemy = null;
             inHitRange = false;
+            inDanger = false;
         }
     }
 
 
-    public void damage(){
+    void attack(){
         //throws a ton of errors once the ore gets destroyed
         //this just prevents error clutter
         try{
@@ -95,7 +112,7 @@ public class UnitBehavior : MonoBehaviour
     }
 
 
-    public void wait(){
+    void wait(){
         //does nothing, used to just delay something using invoke
     }
 }

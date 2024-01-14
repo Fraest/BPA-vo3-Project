@@ -8,6 +8,7 @@ TagManager:
   - Level
   - Unit
   - Ore
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -22,8 +22,6 @@ public class BrokenOreBehavior : MonoBehaviour
         timer += Time.deltaTime;
         if(timer >= 120){
             timer = 0;
-            Debug.Log(regularOre.activeSelf);
-            Debug.Log(gameObject.activeSelf);
         }
     }
 }

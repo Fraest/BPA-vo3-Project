@@ -37,13 +37,13 @@ public class UnitControls : MonoBehaviour
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if(Physics.Raycast(ray, out hit, rayLength)){
+            if(Physics.Raycast(ray, out hit, rayLength, -1, QueryTriggerInteraction.Ignore)){
                 //if a unit is clicked, select it
                 if (hit.collider.CompareTag("Unit")){
                     hit.collider.gameObject.GetComponent<UnitBehavior>().selected = true;
                     hit.collider.gameObject.GetComponent<UnitBehavior>().atGoal = false;
                 }
-                else if (hit.collider.CompareTag("Level") || hit.collider.CompareTag("Ore")){
+                else if (hit.collider.CompareTag("Level") || hit.collider.CompareTag("Ore") || hit.collider.CompareTag("Enemy")){
                     //if level is clicked on, set goal to the point clicked
                     goal.transform.position = hit.point;
 
@@ -63,7 +63,7 @@ public class UnitControls : MonoBehaviour
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             
-            if(Physics.Raycast(ray, out hit, rayLength)){
+            if(Physics.Raycast(ray, out hit, rayLength, -1, QueryTriggerInteraction.Ignore)){
                 //if player right clicks on unit, unit is deselected
                 //if player right clicks on anything else, everything is deselected
                 if(hit.collider.CompareTag("Unit")){
@@ -81,7 +81,7 @@ public class UnitControls : MonoBehaviour
         if (Input.GetMouseButtonDown(2)){
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, rayLength)){
+            if (Physics.Raycast(ray, out hit, rayLength, -1, QueryTriggerInteraction.Ignore)){
                 if (hit.collider.CompareTag("Unit")){
                     hit.collider.GetComponent<NavMeshAgent>().destination = hit.collider.transform.position;
                     hit.collider.GetComponent<UnitBehavior>().atGoal = true;

@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e01374a31a90c2048873b6f638d69867, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.09
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e01374a31a90c2048873b6f638d69867, type: 3}
       propertyPath: m_LocalPosition.z
@@ -156,7 +156,7 @@ Halo:
   m_Color:
     serializedVersion: 2
     rgba: 4294907136
-  m_Size: 10
+  m_Size: 5
 --- !u!65 &2597647905778148747
 BoxCollider:
   m_ObjectHideFlags: 0
