@@ -5,11 +5,13 @@ using UnityEngine;
 public class EnemyBehavior : MonoBehaviour
 {
     HealthManager hm;
+    [SerializeField] private Healthbar healthbar;
 
     // Start is called before the first frame update
     void Start()
     {
         hm = gameObject.GetComponent<HealthManager>();
+        healthbar.UpdateHealthbar(hm.maxHealth, hm.health);
     }
 
 
@@ -17,8 +19,6 @@ public class EnemyBehavior : MonoBehaviour
     void Update()
     {
         if(hm.health == 0){
-            //does this so onTriggerExit actually plays out
-            gameObject.transform.position = gameObject.transform.position + new Vector3(0,100,0);
             Destroy(gameObject);
         }
     }

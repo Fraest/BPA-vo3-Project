@@ -15,12 +15,14 @@ public class UnitBehavior : MonoBehaviour
     public bool selected, atGoal, inHitRange = false, inDanger = false;
     GameObject enemy;
     float timer = 0, timer2 = 0;
-    HealthManager hm;
+    private HealthManager hm;
+    [SerializeField] private Healthbar healthbar;
 
 
     private void Start() {
         hm = gameObject.GetComponent<HealthManager>();
         selected = false;
+        healthbar.UpdateHealthbar(hm.maxHealth, hm.health);
     }
 
 
@@ -43,6 +45,7 @@ public class UnitBehavior : MonoBehaviour
                 attack();
                 if(inDanger){
                     hm.loseHealth(1);
+                    healthbar.UpdateHealthbar(hm.maxHealth, hm.health);
                 }
             }
             timer = 0;
@@ -52,8 +55,10 @@ public class UnitBehavior : MonoBehaviour
         timer2 += Time.deltaTime;
         if(timer2 >= 20){
             hm.gainHealth(1);
+            healthbar.UpdateHealthbar(hm.maxHealth, hm.health);
         }
 
+        //dies at 0 health
         if(hm.health == 0){Destroy(gameObject);}
     }
 
@@ -104,10 +109,17 @@ public class UnitBehavior : MonoBehaviour
 
 
     void attack(){
-        //throws a ton of errors once the ore gets destroyed
+        //throws a ton of errors once the target gets destroyed
         //this just prevents error clutter
         try{
             enemy.GetComponent<HealthManager>().loseHealth(1);
+            enemy.GetComponent<Healthbar>().UpdateHealthbar(enemy.GetComponent<HealthManager>().maxHealth, enemy.GetComponent<HealthManager>().health);
+            //does this since OnTriggerExit doesnt work when triggers are deleted
+            if(enemy.GetComponent<HealthManager>().health == 0){
+                enemy = null;
+                inHitRange = false;
+                inDanger = false;
+            }
         }catch(Exception e){}
     }
 
