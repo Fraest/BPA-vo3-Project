@@ -8,7 +8,7 @@ using System.Data;
 
 public class Gameloop : MonoBehaviour
 {
-    int points = 0;
+    int points = 0, blah; //added blah for compiler error reasons
     void Update()
     {
         if(blah > 0)  // blah to be replaced by the health value of the HQ

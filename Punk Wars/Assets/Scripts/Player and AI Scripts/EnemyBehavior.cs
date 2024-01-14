@@ -6,6 +6,13 @@ public class EnemyBehavior : MonoBehaviour
 {
     HealthManager hm;
     [SerializeField] private Healthbar healthbar;
+    private Gameloop gameloop;
+
+
+    void Awake() {
+        gameloop = GameObject.FindWithTag("HQ").GetComponent<Gameloop>();
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +27,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         if(hm.health == 0){
             Destroy(gameObject);
-            IncrementPoints();
+            gameloop.IncrementPoints();
         }
     }
 }

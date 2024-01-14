@@ -9,6 +9,7 @@ TagManager:
   - Unit
   - Ore
   - Enemy
+  - HQ
   layers:
   - Default
   - TransparentFX

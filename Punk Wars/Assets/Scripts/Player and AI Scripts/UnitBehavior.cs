@@ -110,7 +110,7 @@ public class UnitBehavior : MonoBehaviour
 
     void attack(){
         //throws a ton of errors once the target gets destroyed
-        //this just prevents error clutter
+        //the try catch just prevents error clutter
         try{
             enemy.GetComponent<HealthManager>().loseHealth(1);
             enemy.GetComponent<Healthbar>().UpdateHealthbar(enemy.GetComponent<HealthManager>().maxHealth, enemy.GetComponent<HealthManager>().health);
