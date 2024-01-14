@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Data;
 
-public class Gameloop : Monobehavior
+public class Gameloop : MonoBehaviour
 {
     int points = 0;
     void Update()
