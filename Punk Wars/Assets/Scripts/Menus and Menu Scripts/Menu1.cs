@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class Menu1 : MonoBehaviour
 {
     private SaveManager savemanager;
+    int increment = 0;
+    bool QuitStatus = false;
 
     //Increases build index by 1 to go to the next scene in the index
     public void Play()
@@ -18,6 +20,8 @@ public class Menu1 : MonoBehaviour
     public void Menu()
     {
         SceneManager.LoadScene(0);
+        savemanager.Write("Scores", "Score", increment.ToString());
+        increment++;
     }
 
     //Sends you to the Tutorial
@@ -30,9 +34,15 @@ public class Menu1 : MonoBehaviour
     public void Quit()
     {
         savemanager.DeleteAndRecreateDatabase();
-        Application.Quit();
+        QuitStatus = true;
         Debug.Log("QUIT");
     }
 
-    
+    public void Update()
+    {
+        if(QuitStatus == true)
+        {
+            Application.Quit();
+        }
+    }
 }

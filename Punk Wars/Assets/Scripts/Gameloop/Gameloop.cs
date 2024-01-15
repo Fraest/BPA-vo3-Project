@@ -13,11 +13,7 @@ public class Gameloop : MonoBehaviour
     private SaveManager savemanager;
     private Menu1 menu1;
     private float timer = 0;
-<<<<<<< Updated upstream
-    // private TextMeshPro HighScore;
-=======
     private TMP_Text scoreCounter, copperCounter;
->>>>>>> Stashed changes
 
     int points = 0, blah; //added blah for compiler error reasons
     void Start() {

@@ -10,7 +10,6 @@ using System.IO;
 public class SaveManager : MonoBehaviour
 {
     string dbName = "URI=file:Database.db";
-    public int curID = 0;
 
      private void Awake()
     {
@@ -45,7 +44,7 @@ public class SaveManager : MonoBehaviour
                 IDbCommand Command = Connection.CreateCommand();
 
                 // Creating the Unit Table if it doesn't already exist
-                Command.CommandText = "CREATE TABLE IF NOT EXISTS Scores (id INTEGER, Score INTEGER);";
+                Command.CommandText = "CREATE TABLE IF NOT EXISTS Scores (id INTEGER, Score TEXT);";
                 Command.ExecuteReader();
                 Command = Connection.CreateCommand();
 
@@ -53,19 +52,21 @@ public class SaveManager : MonoBehaviour
             }
         }
 
-    public string Read(string table)
+    public string Read()
     {
+        Debug.Log("READ");
         using (SqliteConnection connection = new SqliteConnection(dbName))
         {
             connection.Open();
-            SqliteCommand cmd = new SqliteCommand("SELECT " + "MAX(Scores)" + " FROM " + table, connection);
+            SqliteCommand cmd = new SqliteCommand("SELECT MAX(Score) FROM Scores", connection);
             SqliteDataReader reader = cmd.ExecuteReader();
             return reader.GetValue(0).ToString();
         }
     }
-
-    public void Write(string table, string column, int row)
+    
+    public void Write(string table, string column, string row)
     {
+        Debug.Log("WRITE");
         using (var connection = new SqliteConnection(dbName))
         {
             connection.Open();
@@ -73,7 +74,7 @@ public class SaveManager : MonoBehaviour
             //Setting up an object command to allow db control
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = "SELECT DISTINCT " + column + " FROM " + table + " WHERE id = " + row.ToString() + " ORDER BY id;";
+                command.CommandText = "SELECT " + column + " FROM " + table + " WHERE id = " + row + ";";
                 command.ExecuteNonQuery();
             }
             connection.Close();
