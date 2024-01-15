@@ -14,7 +14,12 @@ TagManager:
   - Iron
   - ScoreCounter
   - CopperCounter
+<<<<<<< Updated upstream
   - Score
+=======
+  - UnitParent
+  - Unused Unit
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
