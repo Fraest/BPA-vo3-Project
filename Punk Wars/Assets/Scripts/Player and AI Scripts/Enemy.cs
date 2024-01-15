@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
         if (hm.health == 0)
         {
             Destroy(gameObject);
-            gameloop.IncrementPoints();
+            gameloop.IncrementPoints(5);
         }
         
         healthbar.UpdateHealthbar(hm.maxHealth, hm.health);

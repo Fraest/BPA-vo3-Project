@@ -10,6 +10,9 @@ TagManager:
   - Ore
   - Enemy
   - HQ
+  - Copper
+  - Iron
+  - ScoreCounter
   layers:
   - Default
   - TransparentFX

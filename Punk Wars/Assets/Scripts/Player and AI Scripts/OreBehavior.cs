@@ -8,7 +8,10 @@ public class OreBehavior : MonoBehaviour
 {
     [SerializeField] GameObject regularOre, brokenOre, healthbarObject;
     [SerializeField] private Healthbar healthbar;
-    HealthManager hm;
+    private bool isCopper = true;
+    private Gameloop gameloop;
+    private HealthManager hm;
+    
 
 
     void Awake() {
@@ -27,13 +30,8 @@ public class OreBehavior : MonoBehaviour
     void Update()
     {
         if(hm.health <= 0) {
-            //!!!update later with copper and iron counters instead of 0
-            if(regularOre.gameObject.GetComponent<OreDecision>().isCopper){
-                destroyed(0);
-            }
-            else{
-                destroyed(0);
-            }
+            //!!!update later with copper counter instead of 0
+            int temp = destroyed(0);
         }
         //prevents health from going down if the ore is destroyed
         if(!regularOre.activeSelf){hm.health = hm.maxHealth;}
@@ -47,6 +45,7 @@ public class OreBehavior : MonoBehaviour
         //resets health for when it regens
         regularOre.SetActive(false);
         healthbarObject.SetActive(false);
+        gameloop.IncrementPoints(2);
         //adds 1 to 3 to an ore counter
         return (ore += Random.Range(1,4));
     }

@@ -11,8 +11,13 @@ public class Gameloop : MonoBehaviour
     public int id = 1;
     private SaveManager savemanager;
     private Menu1 menu1;
+    private float timer = 0;
+    private TextMeshPro scoreCounter;
 
     int points = 0, blah; //added blah for compiler error reasons
+    void Start() {
+        
+    }
     void Update()
     {
         // Create a temporary reference to the current scene.
@@ -32,10 +37,16 @@ public class Gameloop : MonoBehaviour
                 savemanager.Write("Scores", "Score", id);
             }
         }
+
+        timer += Time.deltaTime;
+        if(timer >= 1){
+            IncrementPoints(1);
+            timer = 0;
+        }
     }
 
-    public void IncrementPoints()
+    public void IncrementPoints(int reward)
     {
-        points = points + 10;
+        points = points + reward;
     }
 }
