@@ -36,6 +36,7 @@ public class Menu1 : MonoBehaviour
         savemanager.DeleteAndRecreateDatabase();
         QuitStatus = true;
         Debug.Log("QUIT");
+        Application.Quit();
     }
 
     public void Update()

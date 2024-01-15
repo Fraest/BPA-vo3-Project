@@ -14,14 +14,11 @@ public class Gameloop : MonoBehaviour
     private Menu1 menu1;
     private float timer = 0;
     private TMP_Text scoreCounter, copperCounter;
-<<<<<<< Updated upstream
-=======
     [SerializeField] private Healthbar healthbar;
     private HealthManager hm;
     private GameObject unitParent;
     private GameObject[] units;
     int points = 0;
->>>>>>> Stashed changes
 
     void Awake() {
         units = GameObject.FindGameObjectsWithTag("Unused Unit");

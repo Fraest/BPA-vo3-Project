@@ -3,23 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Goal
-  - Level
-  - Unit
-  - Ore
-  - Enemy
-  - HQ
-  - Copper
-  - Iron
-  - ScoreCounter
-  - CopperCounter
-<<<<<<< Updated upstream
-  - Score
-=======
-  - UnitParent
-  - Unused Unit
->>>>>>> Stashed changes
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -27,9 +11,9 @@ TagManager:
   - 
   - Water
   - UI
-  - Player
-  - RayCast
-  - NavMeshObstacles
+  - 
+  - 
+  - 
   - 
   - 
   - 
