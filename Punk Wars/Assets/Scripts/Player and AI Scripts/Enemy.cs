@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    [SerializeField] private Healthbar healthbar;
     private float countdown = 5f;
+
+    private int wavepointIndex = 0;
+    private Transform target;
     private Spawner waveSpawner;
     private HealthManager hm;
-    [SerializeField] private Healthbar healthbar;
     private Gameloop gameloop;
+
+    public float speed = 2f;
+
 
     void Awake()
     {
@@ -18,6 +23,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        target = Waypoints.point[0];
         waveSpawner = GetComponentInParent<Spawner>();
         hm = gameObject.GetComponent<HealthManager>();
         healthbar.UpdateHealthbar(hm.maxHealth, hm.health);
@@ -29,7 +35,9 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
             gameloop.IncrementPoints(5);
         }
-        
         healthbar.UpdateHealthbar(hm.maxHealth, hm.health);
+
+        Vector3 dir = target.position - transform.position;
+        // transform.Translate(dir.normalized * speed * Time);
     }
 }
