@@ -53,12 +53,12 @@ public class SaveManager : MonoBehaviour
             }
         }
 
-    public string Read(string table, string column, string row)
+    public string Read(string table)
     {
         using (SqliteConnection connection = new SqliteConnection(dbName))
         {
             connection.Open();
-            SqliteCommand cmd = new SqliteCommand("SELECT " + column + " FROM " + table + " WHERE id = " + row, connection);
+            SqliteCommand cmd = new SqliteCommand("SELECT " + "MAX(Scores)" + " FROM " + table, connection);
             SqliteDataReader reader = cmd.ExecuteReader();
             return reader.GetValue(0).ToString();
         }
