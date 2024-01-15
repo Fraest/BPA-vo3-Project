@@ -11,6 +11,8 @@ public class Spawner : MonoBehaviour
     public int currentWaveIndex = 0;
 
     private bool readyToCountDown;
+
+    //starts the countdown for spawning
     private void Start()
     {
         readyToCountDown = true;
@@ -20,19 +22,17 @@ public class Spawner : MonoBehaviour
             waves[i].enemiesLeft = waves[i].enemies.Length;
         }
     }
+
     private void Update()
     {
+        //Checks to see if all waves have been destroyed
         if (currentWaveIndex >= waves.Length)
         {
-            Debug.Log("You survived every wave!");
+            Debug.Log("CONGRATS!!!!! .....now do it again");
             return;
         }
 
-        if (readyToCountDown == true)
-        {
-            countdown -= Time.deltaTime;
-        }
-
+        //Stops counter if less than zero
         if (countdown <= 0)
         {
             readyToCountDown = false;
@@ -42,13 +42,22 @@ public class Spawner : MonoBehaviour
             StartCoroutine(SpawnWave());
         }
 
+        //Starts it after enemies have been destroyed
         if (waves[currentWaveIndex].enemiesLeft == 0)
         {
             readyToCountDown = true;
 
             currentWaveIndex++;
         }
+
+        //Makes sure counter is reset and then starts counting
+        if (readyToCountDown == true)
+        {
+            countdown -= Time.deltaTime;
+        }
     }
+
+    //Check current wave and sets timer for waiting between enemy spawns and waves
     private IEnumerator SpawnWave()
     {
         if (currentWaveIndex < waves.Length)

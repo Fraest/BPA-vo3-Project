@@ -24,10 +24,6 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
-        transform.Translate(transform.forward * speed * Time.deltaTime);
-
-        countdown -= Time.deltaTime;
-
         if (hm.health == 0)
         {
             Destroy(gameObject);
@@ -35,13 +31,5 @@ public class Enemy : MonoBehaviour
         }
         
         healthbar.UpdateHealthbar(hm.maxHealth, hm.health);
-
-        if (countdown <= 0)
-        {
-            Destroy(gameObject);
-
-            waveSpawner.waves[waveSpawner.currentWaveIndex].enemiesLeft--;
-        }
-
     }
 }
