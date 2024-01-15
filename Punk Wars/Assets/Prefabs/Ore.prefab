@@ -471,6 +471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2713411308a1a0b49bd2c59f71ebd8bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  regularOre: {fileID: 8981488301429549426}
   brokenOre: {fileID: 2626795813243670507}
   healthbarObject: {fileID: 6592244647485783579}
   healthbar: {fileID: 9141509561856708765}

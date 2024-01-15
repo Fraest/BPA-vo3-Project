@@ -20,7 +20,7 @@ public class BrokenOreBehavior : MonoBehaviour
     {
         //after two minutes, regens the ore
         timer += Time.deltaTime;
-        if(timer >= 3){
+        if(timer >= 120){
             timer = 0;
             regularOre.SetActive(true);
             healthbarObject.SetActive(true);

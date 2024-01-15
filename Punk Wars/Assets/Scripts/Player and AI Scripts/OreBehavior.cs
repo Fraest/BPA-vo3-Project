@@ -16,6 +16,7 @@ public class OreBehavior : MonoBehaviour
 
     void Awake() {
         hm = gameObject.GetComponent<HealthManager>();
+        gameloop = GameObject.FindWithTag("HQ").GetComponent<Gameloop>();
     }
 
 
@@ -30,8 +31,7 @@ public class OreBehavior : MonoBehaviour
     void Update()
     {
         if(hm.health <= 0) {
-            //!!!update later with copper counter instead of 0
-            int temp = destroyed(0);
+            GameObject.FindWithTag("HQ").GetComponent<Gameloop>().copper = destroyed(GameObject.FindWithTag("HQ").GetComponent<Gameloop>().copper);
         }
         //prevents health from going down if the ore is destroyed
         if(!regularOre.activeSelf){hm.health = hm.maxHealth;}

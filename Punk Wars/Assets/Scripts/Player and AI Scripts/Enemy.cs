@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float speed;
     private float countdown = 5f;
     private Spawner waveSpawner;
-    HealthManager hm;
+    private HealthManager hm;
     [SerializeField] private Healthbar healthbar;
     private Gameloop gameloop;
 

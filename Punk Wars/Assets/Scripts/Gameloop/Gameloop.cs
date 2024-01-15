@@ -5,18 +5,24 @@ using Mono.Data.Sqlite;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Data;
+using TMPro;
 
 public class Gameloop : MonoBehaviour
 {
-    public int id = 1;
+    public int id = 1, copper = 0;
     private SaveManager savemanager;
     private Menu1 menu1;
     private float timer = 0;
+<<<<<<< Updated upstream
     // private TextMeshPro HighScore;
+=======
+    private TMP_Text scoreCounter, copperCounter;
+>>>>>>> Stashed changes
 
     int points = 0, blah; //added blah for compiler error reasons
     void Start() {
-        
+        scoreCounter = GameObject.FindWithTag("ScoreCounter").GetComponent<TMP_Text>();
+        copperCounter = GameObject.FindWithTag("CopperCounter").GetComponent<TMP_Text>();
     }
     void Update()
     {
@@ -34,7 +40,7 @@ public class Gameloop : MonoBehaviour
             }
             else
             {
-                savemanager.Write("Scores", "Score", id);
+                // savemanager.Write("Scores", "Score", id);
             }
         }
 
@@ -43,10 +49,13 @@ public class Gameloop : MonoBehaviour
             IncrementPoints(1);
             timer = 0;
         }
+
+        copperCounter.text = "Copper: " + copper.ToString();
     }
 
     public void IncrementPoints(int reward)
     {
         points = points + reward;
+        scoreCounter.text = "Score: " + points.ToString();
     }
 }

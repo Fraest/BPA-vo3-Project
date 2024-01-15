@@ -453,4 +453,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  healthbar: {fileID: 0}
+  healthbar: {fileID: 2509082342141865969}
