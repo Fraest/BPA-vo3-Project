@@ -19,9 +19,13 @@ public class Gameloop : MonoBehaviour
     private GameObject unitParent;
     private GameObject[] units;
     public int points = 0;
+    private GameObject loseText;
 
     void Awake() {
         units = GameObject.FindGameObjectsWithTag("Unused Unit");
+        
+        loseText = GameObject.FindWithTag("Lose");
+        loseText.SetActive(false);
 
         hm = gameObject.GetComponent<HealthManager>();
         scoreCounter = GameObject.FindWithTag("ScoreCounter").GetComponent<TMP_Text>();
@@ -43,13 +47,10 @@ public class Gameloop : MonoBehaviour
 
         if(sceneName == "MainLevel")
         {
-            if(hm.health > 0)
+            if(hm.health <= 0)
             {
-
-            }
-            else
-            {
-                // savemanager.Write("Scores", "Score", id);
+                loseText.SetActive(true);
+                Time.timeScale = 0f;
             }
         }
 
