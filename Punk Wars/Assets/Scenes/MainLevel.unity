@@ -3018,6 +3018,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1445862022951312352, guid: 7c2bdb20107252540806878ab86d38d2, type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445862022951312352, guid: 7c2bdb20107252540806878ab86d38d2, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8513508901629430638, guid: 7c2bdb20107252540806878ab86d38d2, type: 3}
       propertyPath: m_Name
       value: HQ

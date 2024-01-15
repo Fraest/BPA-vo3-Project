@@ -12,7 +12,7 @@ public class Gameloop : MonoBehaviour
     public int id = 1, copper = 0, currentUnit = 0;
     private SaveManager savemanager;
     private Menu1 menu1;
-    private float timer = 0;
+    private float timer = 0, timer2 = 0;
     private TMP_Text scoreCounter, copperCounter;
     [SerializeField] private Healthbar healthbar;
     private HealthManager hm;
@@ -59,6 +59,12 @@ public class Gameloop : MonoBehaviour
             timer = 0;
         }
 
+        timer2 += Time.deltaTime;
+        if(timer2 >= 3){
+            hm.loseHealth(points/10);
+            timer2 = 0;
+        }
+
         copperCounter.text = "Copper: " + copper.ToString();
 
         healthbar.UpdateHealthbar(hm.maxHealth, hm.health);
@@ -85,4 +91,10 @@ public class Gameloop : MonoBehaviour
             copper -= 5;
         }
     }
+        public void heal(){
+            if(copper >= 1){
+                hm.gainHealth(1);
+                copper--;
+            }
+        }
 }
