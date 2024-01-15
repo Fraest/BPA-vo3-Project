@@ -56,6 +56,10 @@ public class UnitControls : MonoBehaviour
                         }
                     }
                 }
+                if(hit.collider.CompareTag("HQ")){
+                    //runs SpawnUnit function in Gameloop when hq is clicked on
+                    hit.collider.gameObject.GetComponent<Gameloop>().SpawnUnit();
+                }
             }
         }
 

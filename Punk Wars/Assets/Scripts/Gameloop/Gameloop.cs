@@ -9,16 +9,32 @@ using TMPro;
 
 public class Gameloop : MonoBehaviour
 {
-    public int id = 1, copper = 0;
+    public int id = 1, copper = 0, currentUnit = 0;
     private SaveManager savemanager;
     private Menu1 menu1;
     private float timer = 0;
     private TMP_Text scoreCounter, copperCounter;
+<<<<<<< Updated upstream
+=======
+    [SerializeField] private Healthbar healthbar;
+    private HealthManager hm;
+    private GameObject unitParent;
+    private GameObject[] units;
+    int points = 0;
+>>>>>>> Stashed changes
 
-    int points = 0, blah; //added blah for compiler error reasons
-    void Start() {
+    void Awake() {
+        units = GameObject.FindGameObjectsWithTag("Unused Unit");
+
+        hm = gameObject.GetComponent<HealthManager>();
         scoreCounter = GameObject.FindWithTag("ScoreCounter").GetComponent<TMP_Text>();
         copperCounter = GameObject.FindWithTag("CopperCounter").GetComponent<TMP_Text>();
+    }
+    void Start() {
+        foreach(GameObject tempUnit in units){
+            tempUnit.SetActive(false);
+        }
+        healthbar.UpdateHealthbar(hm.maxHealth, hm.health);
     }
     void Update()
     {
@@ -30,7 +46,7 @@ public class Gameloop : MonoBehaviour
 
         if(sceneName == "MainLevel")
         {
-            if(blah > 0)  // blah to be replaced by the health value of the HQ
+            if(hm.health > 0)
             {
 
             }
@@ -47,11 +63,29 @@ public class Gameloop : MonoBehaviour
         }
 
         copperCounter.text = "Copper: " + copper.ToString();
+
+        healthbar.UpdateHealthbar(hm.maxHealth, hm.health);
     }
 
     public void IncrementPoints(int reward)
     {
         points = points + reward;
         scoreCounter.text = "Score: " + points.ToString();
+    }
+
+    public void SpawnUnit(){
+        //moves an unloaded unit to the arena if the player has 5 copper and there are still units available
+        if(copper >= 5 && currentUnit < 100){
+            units[currentUnit].SetActive(true);
+            units[currentUnit].gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            units[currentUnit].gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
+            units[currentUnit].gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX;
+            units[currentUnit].gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationZ;
+            units[currentUnit].tag = "Unit";
+            units[currentUnit].transform.SetParent(GameObject.FindWithTag("UnitParent").transform);
+            // units[currentUnit].transform.position = new Vector3(26.43f,0.55f,-34.35f);
+            currentUnit++;
+            copper -= 5;
+        }
     }
 }

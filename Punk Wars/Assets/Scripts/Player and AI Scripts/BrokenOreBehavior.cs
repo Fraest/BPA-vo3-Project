@@ -18,9 +18,9 @@ public class BrokenOreBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //after two minutes, regens the ore
+        //after 30 seconds, regens the ore
         timer += Time.deltaTime;
-        if(timer >= 120){
+        if(timer >= 30){
             timer = 0;
             regularOre.SetActive(true);
             healthbarObject.SetActive(true);

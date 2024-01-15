@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthbarSprite: {fileID: 8939113772176939165}
+  reduceSpeed: 2
 --- !u!1 &8542534963336462303
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +278,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e01374a31a90c2048873b6f638d69867, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 26.43
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e01374a31a90c2048873b6f638d69867, type: 3}
       propertyPath: m_LocalPosition.y
@@ -285,7 +286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e01374a31a90c2048873b6f638d69867, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -34.35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e01374a31a90c2048873b6f638d69867, type: 3}
       propertyPath: m_LocalRotation.w
@@ -401,13 +402,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223ee41b125893b489a12f2acffb4730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 4769295836064269624}
-  halo: {fileID: -9185767298946280702}
   selected: 0
   atGoal: 0
   inHitRange: 0
   inDanger: 0
   healthbar: {fileID: 8113398355255534362}
+  agent: {fileID: 4769295836064269624}
+  halo: {fileID: -9185767298946280702}
 --- !u!114 &-8395668869983051184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,5 +481,5 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
