@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public float timer;
 
     private int wavepointIndex = 0;
-    private Spawner waveSpawner;
+    // private Spawner waveSpawner;
     private HealthManager hm;
     private Gameloop gameloop;
 
@@ -17,13 +17,13 @@ public class Enemy : MonoBehaviour
     void Awake()
     {
         gameloop = GameObject.FindWithTag("HQ").GetComponent<Gameloop>();
-        gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(new Vector3(168.042603f,9.2204237f,-42.0311279f)); 
+        // gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(new Vector3(168.042603f,9.2204237f,-42.0311279f)); 
         timer = 0;
     }
 
     private void Start()
     {
-        waveSpawner = GetComponentInParent<Spawner>();
+        // waveSpawner = GetComponentInParent<Spawner>();
         hm = gameObject.GetComponent<HealthManager>();
         healthbar.UpdateHealthbar(hm.maxHealth, hm.health);
     }
@@ -38,9 +38,8 @@ public class Enemy : MonoBehaviour
 
         timer += Time.deltaTime;
         if(timer >= 2){
+            gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(gameObject.transform.position); 
             gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().destination = GameObject.FindWithTag("HQ").transform.position;
         }
-
-        
     }
 }

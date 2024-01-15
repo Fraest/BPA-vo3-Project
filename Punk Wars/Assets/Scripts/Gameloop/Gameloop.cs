@@ -18,7 +18,7 @@ public class Gameloop : MonoBehaviour
     private HealthManager hm;
     private GameObject unitParent;
     private GameObject[] units;
-    int points = 0;
+    public int points = 0;
 
     void Awake() {
         units = GameObject.FindGameObjectsWithTag("Unused Unit");
