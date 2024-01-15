@@ -8,7 +8,6 @@ public class Menu1 : MonoBehaviour
 {
     private SaveManager savemanager;
     int increment = 0;
-    bool QuitStatus = false;
 
     //Increases build index by 1 to go to the next scene in the index
     public void Play()
@@ -34,16 +33,8 @@ public class Menu1 : MonoBehaviour
     public void Quit()
     {
         savemanager.DeleteAndRecreateDatabase();
-        QuitStatus = true;
         Debug.Log("QUIT");
         Application.Quit();
-    }
-
-    public void Update()
-    {
-        if(QuitStatus == true)
-        {
-            Application.Quit();
-        }
+        UnityEditor.EditorApplication.isPlaying = false;
     }
 }
