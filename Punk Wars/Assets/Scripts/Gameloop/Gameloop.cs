@@ -12,7 +12,7 @@ public class Gameloop : MonoBehaviour
     private SaveManager savemanager;
     private Menu1 menu1;
     private float timer = 0;
-    private TextMeshPro scoreCounter;
+    // private TextMeshPro HighScore;
 
     int points = 0, blah; //added blah for compiler error reasons
     void Start() {
