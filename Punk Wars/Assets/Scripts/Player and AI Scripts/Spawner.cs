@@ -6,11 +6,12 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private float countdown;
     [SerializeField] private GameObject spawnPoint;
-
     public Wave[] waves;
     public int currentWaveIndex = 0;
 
     private bool readyToCountDown;
+
+    
 
     //starts the countdown for spawning
     private void Start()
@@ -64,9 +65,7 @@ public class Spawner : MonoBehaviour
         {
             for (int i = 0; i < waves[currentWaveIndex].enemies.Length; i++)
             {
-                Enemy enemy = Instantiate(waves[currentWaveIndex].enemies[i], spawnPoint.transform);
-
-                enemy.transform.SetParent(spawnPoint.transform);
+                Enemy enemy = Instantiate(waves[currentWaveIndex].enemies[i], spawnPoint.transform.position, new Quaternion(0,0,0,1), spawnPoint.transform);
 
                 yield return new WaitForSeconds(waves[currentWaveIndex].timeToNextEnemy);
             }
