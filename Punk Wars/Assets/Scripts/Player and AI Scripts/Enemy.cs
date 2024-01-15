@@ -18,14 +18,14 @@ public class Enemy : MonoBehaviour
 
     void Awake()
     {
+        hm = gameObject.GetComponent<HealthManager>();
         gameloop = GameObject.FindWithTag("HQ").GetComponent<Gameloop>();
     }
 
     private void Start()
     {
-        target = Waypoints.point[0];
+        // target = Waypoints.point[0];
         waveSpawner = GetComponentInParent<Spawner>();
-        hm = gameObject.GetComponent<HealthManager>();
         healthbar.UpdateHealthbar(hm.maxHealth, hm.health);
     }
     private void Update()
@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
         }
         healthbar.UpdateHealthbar(hm.maxHealth, hm.health);
 
-        Vector3 dir = target.position - transform.position;
+        // Vector3 dir = target.position - transform.position;
         // transform.Translate(dir.normalized * speed * Time);
     }
 }
