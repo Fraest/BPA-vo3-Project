@@ -35,6 +35,5 @@ public class Menu1 : MonoBehaviour
         savemanager.DeleteAndRecreateDatabase();
         Debug.Log("QUIT");
         Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
     }
 }
